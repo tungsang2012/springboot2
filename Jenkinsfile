@@ -39,7 +39,7 @@ pipeline {
 
                 sh "docker run --name khalid-mysql --rm --network dev -v khalid-mysql-data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password123_DONG -e MYSQL_DATABASE=db_example  -d mysql:8.0 "
                 sh 'sleep 20'
-                sh "docker exec -i khalid-mysql mysql --user=root --password=password123_DONG < script"
+                sh "docker exec -i khalid-mysql mysql --user=khalid --password=password123_DONG < script"
             }
         }
 
